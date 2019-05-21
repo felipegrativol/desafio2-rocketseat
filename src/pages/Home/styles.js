@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   underline: {
-    borderBottomColor: colors.light,
+    borderBottomColor: "#dbdbdb",
     borderBottomWidth: 1,
     marginTop: metrics.baseMargin,
     marginBottom: metrics.baseMargin,

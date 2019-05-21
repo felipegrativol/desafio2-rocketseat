@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   },
   inputBox: {
     backgroundColor: colors.white,
-    width: metrics.screenWidth - 100,
+    width: metrics.screenWidth - 110,
     height: metrics.screenHeigt / 15,
     borderRadius: metrics.baseRadius,
     borderColor: colors.light,
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginTop: metrics.baseMargin,
-    padding: metrics.basePadding,
+    padding: metrics.basePadding + 5,
     color: colors.darker
   }
 });
