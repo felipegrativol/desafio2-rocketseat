@@ -1,5 +1,12 @@
-import Reactotron from "reactotron-react-native";
+import Reactotron, { overlay } from "reactotron-react-native";
 
-Reactotron.configure({ host: "10.0.0.116" }) // controls connection & communication settings
-  .useReactNative() // add all built-in react native plugins
-  .connect(); // let's connect!
+console.tron = console;
+
+const tron = Reactotron.configure({ host: "10.0.0.116" }) // controls connection & communication settings
+  .useReactNative()
+  .use(overlay())
+  .connect();
+
+console.tron = tron;
+
+tron.clear(); // Limpa a tela do Reactotron a cada reload

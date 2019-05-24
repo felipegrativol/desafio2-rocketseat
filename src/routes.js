@@ -1,13 +1,34 @@
-import { createAppContainer, createSwitchNavigator } from "react-navigation";
+import { createAppContainer, createStackNavigator } from "react-navigation";
 
 import Home from "~/pages/Home";
 import Repositories from "~/pages/Repositories";
 
+// Colors
+import { colors } from "~/styles";
+
 const Routes = createAppContainer(
-  createSwitchNavigator({
-    Home,
-    Repositories
-  })
+  createStackNavigator(
+    {
+      Home,
+      Repositories
+    },
+    {
+      defaultNavigationOptions: {
+        headerTintColor: colors.darker,
+        headerBackTitle: null,
+        headerTitleContainerStyle: {
+          left: 0
+        },
+        headerTitleStyle: {
+          flex: 1,
+          textAlign: "center"
+        }
+      }
+    },
+    {
+      headerLayoutPreset: "center"
+    }
+  )
 );
 
 export default Routes;
