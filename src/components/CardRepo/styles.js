@@ -1,3 +1,11 @@
+/**
+ * Desafio 2 - RocketSeat
+ * CardRepo Styles
+ *
+ * @author Luiz Felipe H. Grativol
+ *
+ */
+
 import { StyleSheet } from "react-native";
 import { colors, metrics } from "~/styles";
 
@@ -7,10 +15,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: colors.white,
     flexDirection: "row",
-    width: metrics.screenWidth - 40,
+    width: metrics.screenWidth - 50,
     padding: metrics.basePadding,
     margin: metrics.baseMargin - 5,
-    borderRadius: metrics.baseRadius
+    borderRadius: metrics.baseRadius,
+    marginHorizontal: metrics.baseMargin
   },
   box: {
     flexDirection: "row",

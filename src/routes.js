@@ -1,3 +1,11 @@
+/**
+ * Desafio 2 - RocketSeat
+ * ROUTES
+ *
+ * @author Luiz Felipe H. Grativol
+ *
+ */
+
 import { createAppContainer, createStackNavigator } from "react-navigation";
 
 import Home from "~/pages/Home";

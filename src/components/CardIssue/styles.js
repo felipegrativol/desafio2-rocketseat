@@ -3,11 +3,11 @@ import { colors, metrics } from "~/styles";
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: colors.white,
     flexDirection: "row",
-    width: metrics.screenWidth - 40,
     padding: metrics.basePadding,
     margin: metrics.baseMargin - 5,
     borderRadius: metrics.baseRadius

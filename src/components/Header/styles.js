@@ -1,3 +1,11 @@
+/**
+ * Desafio 2 - RocketSeat
+ * Header Styles
+ *
+ * @author Luiz Felipe H. Grativol
+ * @deprecated
+ */
+
 import { StyleSheet } from "react-native";
 import { colors, metrics } from "~/styles";
 import { getStatusBarHeight } from "react-native-status-bar-height";

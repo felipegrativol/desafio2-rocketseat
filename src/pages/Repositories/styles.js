@@ -1,3 +1,11 @@
+/**
+ * Desafio 2 - RocketSeat
+ * Repositories Styles
+ *
+ * @author Luiz Felipe H. Grativol
+ *
+ */
+
 import { StyleSheet } from "react-native";
 import { colors, metrics } from "~/styles";
 
@@ -5,7 +13,8 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.lighter,
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
+    height: metrics.screenHeight
   },
   boxButtons: {
     backgroundColor: colors.light,
@@ -23,7 +32,16 @@ const styles = StyleSheet.create({
   },
   textButtons: {
     fontSize: 20,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    color: colors.lighter
+  },
+  empty: {
+    flex: 1,
+    marginTop: metrics.screenHeight / 3
+  },
+  emptyText: {
+    fontSize: 17,
+    color: colors.darkTransparent
   }
 });
 export default styles;

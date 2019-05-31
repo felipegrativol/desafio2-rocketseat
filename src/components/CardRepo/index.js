@@ -1,7 +1,14 @@
+/**
+ * Desafio 2 - RocketSeat
+ * Component CardRepo
+ *
+ * @author Luiz Felipe H. Grativol
+ *
+ */
+
 import React from "react";
-import { View, Text, Image, Alert, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import styles from "./styles";
-//import { TouchableOpacity } from "react-native-gesture-handler";
 import PropTypes from "prop-types";
 
 import Icon from "react-native-vector-icons/FontAwesome";
@@ -26,7 +33,6 @@ const CardRepo = ({ item, navigation: { navigate } }) => (
         navigate("Repositories", {
           title: item.name,
           full_name: item.full_name
-          //full_name: "Nome completo"
         });
       }}
     >
@@ -34,5 +40,19 @@ const CardRepo = ({ item, navigation: { navigate } }) => (
     </TouchableOpacity>
   </View>
 );
+
+CardRepo.propTypes = {
+  item: PropTypes.shape({
+    owner: PropTypes.shape({
+      avatar_url: PropTypes.string,
+      login: PropTypes.string
+    }),
+    name: PropTypes.string,
+    full_name: PropTypes.string
+  }).isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func
+  }).isRequired
+};
 
 export default withNavigation(CardRepo);

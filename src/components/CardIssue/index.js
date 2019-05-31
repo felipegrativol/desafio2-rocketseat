@@ -1,15 +1,44 @@
+/**
+ * Desafio 2 - RocketSeat
+ * Component CardIssue
+ *
+ * @author Luiz Felipe H. Grativol
+ *
+ */
+
 import React from "react";
-import { View, Text, Image, Alert, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  Alert,
+  TouchableOpacity,
+  Linking
+} from "react-native";
+
+// Style
 import styles from "./styles";
 
+// PropTypes
 import PropTypes from "prop-types";
 
+// Icons
 import Icon from "react-native-vector-icons/FontAwesome";
 
+// Navigation
 import { withNavigation } from "react-navigation";
 
 const CardIssue = ({ item, navigation: { navigate } }) => {
-  console.tron.log(item);
+  openURL = url => {
+    Linking.canOpenURL(url).then(supported => {
+      if (supported) {
+        Linking.openURL(url);
+      } else {
+        Alert.alert("URL indisponível:  " + url);
+      }
+    });
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.box}>
@@ -23,18 +52,24 @@ const CardIssue = ({ item, navigation: { navigate } }) => {
         </View>
       </View>
 
-      <TouchableOpacity
-      // onPress={() => {
-      //   navigate("Repositories", {
-      //     title: item.name,
-      //     full_name: item.full_name
-      //   });
-      // }}
-      >
+      <TouchableOpacity onPress={() => this.openURL(item.html_url)}>
         <Icon name="angle-right" size={22} style={styles.icon} />
       </TouchableOpacity>
     </View>
   );
+};
+
+CardIssue.propTypes = {
+  item: PropTypes.shape({
+    user: PropTypes.shape({
+      avatar_url: PropTypes.string,
+      login: PropTypes.string
+    }).isRequired,
+    html_url: PropTypes.string
+  }).isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func
+  }).isRequired
 };
 
 export default withNavigation(CardIssue);

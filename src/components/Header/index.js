@@ -1,3 +1,11 @@
+/**
+ * Desafio 2 - RocketSeat
+ * Component Header
+ *
+ * @author Luiz Felipe H. Grativol
+ * @deprecated
+ */
+
 import React from "react";
 import { View, Text, StatusBar } from "react-native";
 import styles from "./styles";
