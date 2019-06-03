@@ -59,11 +59,14 @@ export default class Home extends Component {
       await AsyncStorage.getItem("@Github:repositories")
     );
 
-    this.setState({
-      repositories: repositories,
-      loadingList: false,
-      loading: false
-    });
+    if (repositories) {
+      this.setState({
+        repositories: repositories,
+        loading: false
+      });
+    } else {
+      this.setState({ loading: false });
+    }
   };
 
   saveRepository = async repositories => {
@@ -73,10 +76,13 @@ export default class Home extends Component {
   signIn = async () => {
     this.setState({ loading: true });
     const { searchInput, repositories } = this.state;
+
     try {
       const { data } = await api.get(`/repos/${searchInput}`);
 
-      if (repositories.find(repo => repo.full_name === searchInput)) {
+      if (
+        this.state.repositories.find(repo => repo.full_name === searchInput)
+      ) {
         Alert.alert("Repositório já inserido");
         this.setState({ loading: false });
       } else {
